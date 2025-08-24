@@ -10,7 +10,7 @@ import docx  # for Word files
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # App title
-st.title("📖 READ4ME - Universal OCR & Text-to-Speech")
+st.title(" READ4ME - Universal OCR & Text-to-Speech")
 
 # Upload multiple files (any type)
 uploaded_files = st.file_uploader(
@@ -67,11 +67,11 @@ if uploaded_files:
             # Append to combined
             full_text += f"\n\n--- File {idx} ---\n{text}"
         else:
-            st.warning(f"⚠️ No text detected in File {idx}")
+            st.warning(f" No text detected in File {idx}")
 
     # Combined Output
     if full_text.strip():
-        st.subheader("📘 Combined Extracted Text")
+        st.subheader(" Combined Extracted Text")
         st.text_area("All Text", full_text, height=300)
 
         combined_audio_path = os.path.join(output_folder, "combined_output.mp3")
@@ -79,3 +79,4 @@ if uploaded_files:
         tts.save(combined_audio_path)
         st.success("🎧 Combined audio ready!")
         st.audio(combined_audio_path)
+
