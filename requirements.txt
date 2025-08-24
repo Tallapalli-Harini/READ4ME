@@ -1,4 +1,6 @@
-numpy
-opencv-python
 streamlit
 pytesseract
+Pillow
+gTTS
+PyMuPDF
+python-docx
