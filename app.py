@@ -8,7 +8,7 @@ import streamlit as st
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # App title
-st.title("📖 READ4ME - Image to Speech OCR")
+st.title("READ4ME - Image to Speech OCR")
 
 # Upload multiple images
 uploaded_files = st.file_uploader("Upload screenshots", type=["png", "jpg", "jpeg"], accept_multiple_files=True)
@@ -44,7 +44,7 @@ if uploaded_files:
 
     # Combined Output
     if full_text.strip():
-        st.subheader("📘 Combined Extracted Text")
+        st.subheader(" Combined Extracted Text")
         st.text_area("All Text", full_text, height=300)
 
         combined_audio_path = os.path.join(output_folder, "combined_output.mp3")
@@ -52,3 +52,4 @@ if uploaded_files:
         tts.save(combined_audio_path)
         st.success("🎧 Combined audio ready!")
         st.audio(combined_audio_path)
+
